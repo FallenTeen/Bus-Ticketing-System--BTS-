@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ubah Data PO</title>
+</head>
+<body>
+    <h1>Data Pemesanan Tiket</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Kelas</th>
+                <th>Tujuan</th>
+                <th>Jumlah Kursi</th>
+                <th>Harga</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ticket_data in data %}
+                <tr>
+                    <td>{{ ticket_data[0] }}</td>
+                    <td>{{ ticket_data[1] }}</td>
+                    <td>{{ ticket_data[2] }}</td>
+                    <td>{{ ticket_data[3] }}</td>
+                    <td>{{ ticket_data[4] }}</td>
+                    <td>{{ ticket_data[5] }}</td>
+                    <td><button onclick="ubahPoIni('{{ ticket_data[0] }}','{{ ticket_data[1] }}','{{ ticket_data[2] }}','{{ ticket_data[3] }}','{{ ticket_data[4] }}','{{ ticket_data[5] }}')">Ubah</button></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

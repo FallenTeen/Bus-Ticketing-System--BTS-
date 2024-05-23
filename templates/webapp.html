@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="../static/webapp.js" defer></script>
+        <meta charset="UTF-8" >
+    
+        <link rel="stylesheet" href="../static/styles.css">
+        <title>Test Page</title>
+    </head>
+    <body>
+        <div id="top">
+            <div id="navbarnya">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">
+                        <img src="../static/b.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                        BTS
+                      </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                      </ul>
+                      <form class="form-inline my-2 my-lg-0">
+                        <a id="tombolLogin" onclick="redirectToLogin()" methods="POST">Login</a>
+                      </form>
+                    </div>
+                  </nav>
+            </div>
+
+
+            <!-- AAAAAAAAAAAAAAAAAAAA -->
+          <div id="container" class="row justify-content-md-center form-tiket" style="background-image: url('../static/images/pattern.jpg');" name="tripmaking1"">
+            <div class="container gx-4 text-center">
+                <div id="busorfood-group" class="row gx-5 d-flex justify-content-center align-items-center pt-3">
+                    <div id="buses" class="col col-lg-1 text-center d-flex flex-column align-items-center" onclick="showBusesForm()">
+                        <img src="../static/images/buslogo.png" width="40" height="40">
+                        <h4>Bus</h4>
+                    </div>
+                    <div id="fnb" class="col col-lg-1 text-center d-flex flex-column align-items-center" onclick="showFNBForm()">
+                        <img src="../static/images/foodlogo.png" width="40" height="40">
+                        <h4>Makanan</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div  id="formBuses" class="row justify-content-md-center">
+              <form class="d-flex flex-column">
+                  <div id="form1" class="p-2 mx-auto mb-3">
+                      <div class="d-flex align-items-center justify-content-center vh-100">
+                          <div class="text-center">
+                            <div id="keberangkatan" class="container d-flex justify-content-center align-items-center vh-100">
+                              <div id="f-asal"><label>Asal</label><input name="inputAsal" type="text" placeholder="Asal"></div>
+                              <div id="f-swapper"> <label></label><img src="../static/images/swapper.png" width="30" height="30" style="margin-bottom: 0;" onclick="swapAsalTujuan()"> </div>
+                              <div id="f-tujuan"><label>Tujuan</label><input name="inputTujuan" type="text" placeholder="Tujuan"></div>
+                              <div id="f-tanggal-berangkat"><label>Tanggal</label><input name="inputTanggal" type="date"></div>
+                              <div id="f-tombol-cari" class="align-self-end"><a class="btn btn-info" id="tombolLogin" onclick="cariKeberangkatan()" methods="POST">Cari Keberangkatan</a></div>
+                            <!-- <div id="po_tersedia"></div>
+                              <div id="tampilKursi"></div>
+                              <div id="harga-konfirmasi"></div>
+                              <div id="Konfirmasi Pesanan"></div> -->
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div id="form2" class="p-2 mx-auto mb-3 justify-content-around">
+                            <div class="d-flex align-items-center justify-content-center vh-100">
+                              <div class="col-sm-4">
+                                <div class="card">
+                                  <img class="card-img-top" src="../static/images/Bulupitu.jpg" alt="Card image cap">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Purwokerto</h5>
+                                    <p class="card-text">Purwokerto adalah ibu kota Kabupaten Banyumas, Jawa Tengah.</p>
+                                    <a href="#" class="btn btn-primary" onclick="cariKeberangkatan2('purwokerto')">Go somewhere</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-4">
+                                <div class="card">
+                                  <img class="card-img-top" src="../static/images/Terminal.jpeg" alt="Card image cap">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Karangklesem</h5>
+                                    <p class="card-text">Karangklesem adalah kelurahan di kecamatan Purwokerto Selatan, Banyumas, Jawa Tengah, Indonesia.</p>
+                                    <a href="#" class="btn btn-primary" onclick="cariKeberangkatan2('karangklesem')">Go somewhere</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-4">
+                                <div class="card">
+                                  <img class="card-img-top" src="../static/images/Terminal Purbalingga.jpeg" alt="Card image cap">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Purbalingga</h5>
+                                    <p class="card-text">Purbalingga adalah sebuah wilayah kabupaten yang terletak di Provinsi Jawa Tengah, Indonesia.</p>
+                                    <a href="#" class="btn btn-primary" onclick="cariKeberangkatan2('purbalingga')">Go somewhere</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Tambahkan lebih banyak kartu jika diperlukan -->
+                            </div>
+                  </div>
+              </form>
+          </div>
+
+                
+            <form id="formFNB" style="display: none;">       
+             <div class="row justify-content-around">
+              <div class="col-sm-4">
+                <div class="card">
+                 <img src="../static/images/burger.jpg" class="card-img-top" alt="Food Image">
+                 <div class="card-body">
+                 <h5 class="card-title">Burger</h5>
+                 <p class="card-text">Bahan-Bahan = Roti, Bawang Bombay, Mayones, Saus, dan Bumbu dapur lainnya.</p>
+                 <p class="card-text">Harga: Rp.20.000.-</p>
+                 <a href="#" class="btn btn-primary" onclick="pesanMakanan('burger', 20000)">Pesan Sekarang</a>
+                </div>
+               </div>
+              </div>
+                <div class="col-sm-4">
+                  <div class="card">
+                    <img src="../static/images/spageti.jpg" class="card-img-top" alt="Food Image">
+                    <div class="card-body">
+                      <h5 class="card-title">Spageti</h5>
+                      <p class="card-text">Bahan-bahan = Mie, Daaging sapi dan Bumbu dapur lainnya.</p>
+                      <p class="card-text">Harga: Rp.20.000.-</p>
+                      <a href="#" class="btn btn-primary" onclick="pesanMakanan('spageti', 20000)">Pesan Sekarang</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="card">
+                    <img src="../static/images/hotdog.jpg" class="card-img-top" alt="Food Image">
+                    <div class="card-body">
+                      <h5 class="card-title">Hot Dog</h5>
+                      <p class="card-text">Bahan-bahan = Roti, Sosis, Saus Tomat, Bawang Bombay, dan Bumbu dapur lainnya.</p>
+                      <p class="card-text">Harga: Rp.20.000.-</p>
+                      <a href="#" class="btn btn-primary" onclick="pesanMakanan('hotdog', 20000)">Pesan Sekarang</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="card">
+                    <img src="../static/images/nasgor.jpeg" class="card-img-top" alt="Food Image">
+                    <div class="card-body">
+                      <h5 class="card-title">Nasi Goreng</h5>
+                      <p class="card-text">Bahan-bahan = Nasi, kecap, Telor, Sambal, dan Bumbu dapur lainnya.</p>
+                      <p class="card-text">Harga: Rp.20.000.-</p>
+                      <a href="#" class="btn btn-primary" onclick="pesanMakanan('nasgor', 20000)">Pesan Sekarang</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="card">
+                    <img src="../static/images/soto.jpeg" class="card-img-top" alt="Food Image">
+                    <div class="card-body">
+                      <h5 class="card-title">Soto</h5>
+                      <p class="card-text">Bahan-bahan = ketupat, Mie bihun, Daun Bawang, Telor, Tomat, dan Bahan Dapur lainnya.</p>
+                      <p class="card-text">Harga: Rp.20.000</p>
+                      <a href="#" class="btn btn-primary" onclick="pesanMakanan('soto', 20000)">Pesan Sekarang</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="card">
+                    <img src="../static/images/Ayambakar.jpeg" class="card-img-top" alt="Food Image">
+                    <div class="card-body">
+                      <h5 class="card-title">Ayam Bakar</h5>
+                      <p class="card-text">Bahan-bahan = Ayam, Kecap, Saur, dan bumbu dapur lainnya.</p>
+                      <p class="card-text">Harga: Rp.20.000</p>
+                      <a href="#" class="btn btn-primary" onclick="pesanMakanan('ayambakar', 20000)">Pesan Sekarang</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Buat kartu lainnya di sini -->
+              </div>
+              
+            </form>
+        </div>
+        </div>
+        <div id="Contentnextsession"></div>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Data PO</title>
+</head>
+<body>
+    <h1>Edit Data Pemesanan Tiket</h1>
+    <form action="/updatePoIniDenganNilaiYangBaru" method="POST">
+        <label for="id_po">ID:</label>
+        <input type="text" id="id_po" name="id_po" value="{{ id_po }}" readonly><br><br>
+        
+        <label for="nama_po">Nama:</label>
+        <input type="text" id="nama_po" name="nama_po" value="{{ nama_po | default('') }}" placeholder="{{ nama_po }}"><br><br>
+        
+        <label for="kelas">Kelas:</label>
+        <input type="text" id="kelas" name="kelas" value="{{ kelas | default('') }}" placeholder="{{ kelas }}"><br><br>
+        
+        <label for="tujuan">Tujuan:</label>
+        <input type="text" id="tujuan" name="tujuan" value="{{ tujuan | default('') }}" placeholder="{{ tujuan }}"><br><br>
+        
+        <label for="jumlah_kursi">Jumlah Kursi:</label>
+        <input type="text" id="jumlah_kursi" name="jumlah_kursi" value="{{ jumlah_kursi | default('') }}" placeholder="{{ jumlah_kursi }}"><br><br>
+        
+        <label for="harga">Harga:</label>
+        <input type="text" id="harga" name="harga" value="{{ harga | default('') }}" placeholder="{{ harga }}"><br><br>
+        
+        <input type="submit" onclick="UpdatePoIni()" value="Ubah">
+    </form>
+</body>
+</html>

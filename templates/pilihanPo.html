@@ -1,0 +1,28 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID Keberangkatan</th>
+            <th>ID PO</th>
+            <th>Nama PO</th>
+            <th>Tujuan</th>
+            <th>Tanggal Keberangkatan</th>
+            <th>Kelas</th>
+            <th>Harga</th>
+            <th>Pilih Po</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in listPoNya %}
+        <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+            <td>{{ item[2] }}</td>
+            <td>{{ item[3] }}</td>
+            <td>{{ item[4] }}</td>
+            <td>{{ item[5] }}</td>
+            <td>{{ item[6] }}</td>
+            <td><button onclick="tampilkanKursiTersedia('{{ item[0] }}','{{ item[1] }}','{{ item[2] }}','{{ item[3] }}','{{ item[4] }}','{{ item[5] }}','{{ item[6] }}')">Tampilkan Kursi Tersedia</button></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

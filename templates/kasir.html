@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Panel</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Sesuaikan dengan tinggi yang diinginkan */
+        }
+
+        .flex-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px; /* Atur jarak dari elemen-elemen di bawahnya */
+        }
+
+        .flex-container button,
+        .flex-container h5 {
+            margin: 0 10px; /* Atur jarak antara elemen */
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="flex-container">
+            <button onclick="login()" class="btn btn-danger">Reset</button>
+            <h5 style="display: inline-block; vertical-align: middle; margin-left: 25px; margin-right: 25px; margin-top: 28px; font-size: 32px; border: 3px solid #FFFFFF; padding-bottom: 6px; padding-top: 3px; padding-left: 8px; padding-right: 8px; border-radius: 20px">Kasir</h5>
+            <button onclick="location.href='./'" class="btn btn-danger">Logout</button>
+        </div>
+        <div id="bayarmakan">
+            <button class="btn btn-danger" id="tombolNama" onclick="refresh()">Refresh Pesanan</button>
+            <div id="listPesanan"></div>
+        </div>
+        <div id="beli_tiket">
+            <input type="text" id="namaPelanggan" name="namaPelanggan" placeholder = "Nama">
+            <button class="btn btn-danger" id="tombolNama" onclick="bukaTiket()">Pilih Tujuan</button>
+            <div id="tujuan"></div>
+            <div id="po_tersedia"></div>
+            <div id="tampilKursi"></div>
+            <div id="harga-konfirmasi"></div>
+            <div id="Konfirmasi Pesanan"></div>
+        </div>
+        
+    </div>
+</body>
+<script>
+    function bayartagihan(id_pesanan) {
+    // Data yang akan dikirim dalam permintaan POST
+    const data = {
+        id_pesanan: id_pesanan
+    };
+
+    // Konfigurasi untuk permintaan POST
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+
+    // Permintaan POST menggunakan fetch ke endpoint /update_status
+    fetch('/update_status', requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Terjadi kesalahan saat mengirim permintaan.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Berhasil melakukan permintaan
+            console.log('Status berhasil diperbarui:', data);
+            // Tambahkan logika atau tindakan lain jika diperlukan
+        })
+        .catch(error => {
+            // Tangani kesalahan
+            console.error('Kesalahan:', error.message);
+        });
+}
+
+   function refresh() {
+    fetch('/get_data_makanan')
+        .then(response => response.text()) // Mengambil konten HTML dari respons
+        .then(html => {
+            document.getElementById('listPesanan').innerHTML = html; // Memasukkan konten HTML ke dalam div listPesanan
+        })
+        .catch(error => console.error('Error:', error));
+}
+</script>
+</html>
+
+<!-- <button onclick="login()" class="btn btn-danger">Reset</button>
+<h5 style="display: inline-block; vertical-align: middle; margin-left: 25px; margin-right: 25px; margin-top: 28px; font-size: 32px; border: 3px solid #FFFFFF; padding-bottom: 6px; padding-top: 3px; padding-left: 8px; padding-right: 8px; border-radius: 20px">Kasir</h5>
+<button onclick="location.href='./'" class="btn btn-danger">Logout</button>
+<input type="text" id="namaPelanggan" name="namaPelanggan" placeholder = "Nama">
+<button id="tombolNama" onclick="bukaTiket()">Pilih Tujuan</button>
+    <div id="tujuan"></div>
+    <div id="po_tersedia"></div>
+    <div id="tampilKursi"></div>
+    <div id="harga-konfirmasi"></div>
+    <div id="Konfirmasi Pesanan"></div> -->

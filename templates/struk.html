@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Struk Tiket</title>
+    <!-- Letakkan tautan ke CSS Anda di sini jika diperlukan -->
+    <style>
+        /* Tambahkan gaya CSS sesuai kebutuhan */
+        .container {
+            /* Atur gaya container di sini */
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            /* tambahkan gaya lain sesuai kebutuhan */
+        }
+
+        /* Gaya tombol */
+        button {
+            /* Gaya tombol di sini */
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+        }
+
+        button:hover {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Konten yang dihasilkan dari Python -->
+        {% if hasil %}
+            {{ hasil | safe }}
+        {% else %}
+            <p>Tidak ada hasil untuk ditampilkan.</p>
+        {% endif %}
+    </div>
+    <!-- Skrip untuk fungsi login() jika diperlukan -->
+</body>
+</html>

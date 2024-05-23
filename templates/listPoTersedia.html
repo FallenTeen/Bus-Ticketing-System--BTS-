@@ -1,0 +1,13 @@
+<h4>Buat Keberangkatan baru</h4>
+<div id="formKeberangkatan">
+    <div>
+        <select class="form-control" id="cekpotersedia">
+            {% for item in tujuan %}
+            <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <button onclick="tampilPo()">Cek Po Tersedia</button>
+    </div>
+</div>

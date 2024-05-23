@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manager</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Sesuaikan dengan tinggi yang diinginkan */
+        }
+
+        .flex-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px; /* Atur jarak dari elemen-elemen di bawahnya */
+        }
+
+        .flex-container button,
+        .flex-container h5 {
+            margin: 0 10px; /* Atur jarak antara elemen */
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="flex-container">
+            <button onclick="login()" class="btn btn-danger">Reset</button>
+            <h5>Manager</h5>
+            <button onclick="location.href='./'" class="btn btn-danger">Logout</button>
+        </div>
+        <!-- <button onclick="login()" class="btn btn-danger">Reset</button>
+<h5 style="display: inline-block; vertical-align: middle; margin-left: 25px; margin-right: 25px; margin-top: 28px; font-size: 32px; border: 3px solid #FFFFFF; padding-bottom: 6px; padding-top: 3px; padding-left: 8px; padding-right: 8px; border-radius: 20px">Manager</h5>
+<button onclick="location.href='./'" class="btn btn-danger">Logout</button> -->
+<div id="options">
+    <div class="buttonan">
+        <button onclick="listKeberangkatan()">Lihat Status Kloter Keberangkatan</button>
+        <button onclick="buatKeberangkatan()">Buat Keberangkatan Baru</button>
+        <button onclick="inputPo()">Masukkan PO Bus</button>
+        <button onclick="ubahPo()">Ubah Data PO</button>
+        <div id="formKeberangkatan"></div>
+    </div>
+</div>
+<div id="manager-dynamic-1"></div>
+<div id="#result-container"></div>
+<div id="manager-dynamic-2"></div>
+<div id="manager-dynamic-3"></div>
+<div id="manager-dynamic-4"></div>
+<div id="manager-dynamic-5"></div>
+    </div>
+</body>
+</html>
+<!-- <button onclick="login()" class="btn btn-danger">Reset</button>
+<h5 style="display: inline-block; vertical-align: middle; margin-left: 25px; margin-right: 25px; margin-top: 28px; font-size: 32px; border: 3px solid #FFFFFF; padding-bottom: 6px; padding-top: 3px; padding-left: 8px; padding-right: 8px; border-radius: 20px">Manager</h5>
+<button onclick="location.href='./'" class="btn btn-danger">Logout</button>
+<div id="options">
+	<button onclick="listKeberangkatan()">Lihat Status Kloter Keberangkatan</button>
+	<button onclick="buatKeberangkatan()">Buat Keberangkatan Baru</button>
+	<button onclick="inputPo()">Masukkan PO Bus</button>
+	<button onclick="ubahPo()">Ubah Data PO</button>
+	<div id="formKeberangkatan"></div>
+</div>
+<div id="manager-dynamic-1"></div>
+<div id="#result-container"></div>
+<div id="manager-dynamic-2"></div>
+<div id="manager-dynamic-3"></div>
+<div id="manager-dynamic-4"></div>
+<div id="manager-dynamic-5"></div> -->

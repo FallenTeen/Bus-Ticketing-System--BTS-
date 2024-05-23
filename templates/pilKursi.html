@@ -1,0 +1,16 @@
+<div class="kursiiii">
+    <!-- Kursi yang tersedia -->
+    {% for i in range(0, kursi_tersedia|length) %}
+        {% set currentNoKursi = noKursi[i] %}
+        {% if kursi_tersedia[i]['no_kursi'] in kursi_terbeli %}
+            <button class="seat-btn unavailable">
+                {{ kolom[i] }}{{ baris[i] }}
+            </button>
+        {% else %}
+            <button class="seat-btn" onclick="inputKursi('{{ currentNoKursi }}')">
+                {{ kolom[i] }}{{ baris[i] }}
+            </button>
+        {% endif %}
+    {% endfor %}
+        </div>
+<button onclick="konfirmasiData()">Cek & Konfirmasi</button>

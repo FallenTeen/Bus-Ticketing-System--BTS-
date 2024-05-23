@@ -1,0 +1,20 @@
+<h4>List Keberangkatan</h4>
+<div id="formPo">
+<input type="date" name="tanggalbr" id="tanggalbr" placeholder="Tanggal Keberangkatan">
+<button onclick="cekKeberangkatan()" class="btn-primary">Cek Keberangkatan</button>
+</div>
+<script>
+     function cekKeberangkatan() {
+        var tanggal = document.getElementById('tanggalbr').value; // Mengambil nilai dari input tanggal
+        $.ajax({
+            type: 'GET',
+            url: '/tampilkanDataKeberangkatan',
+            data: {
+                'tanggal': tanggal
+            },
+            success: function(response) {
+                $('#manager-dynamic-2').html(response);
+            }
+        });
+    }
+</script>

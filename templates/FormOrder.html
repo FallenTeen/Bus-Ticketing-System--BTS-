@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Booking Form HTML Template</title>
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="../static/bootstrap.min.css" />
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="../static/style2.css" />
+</head>
+
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-md-offset-0">
+						<div class="booking-form">
+							<div class="form-group">
+								<div class="nama">
+									<span class="form-label">Nama Pelanggan</span>
+									<input id="namaPelanggan" name="namaPelanggan" class="form-control" type="text" placeholder="Nama Pelanggan">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Asal</span>
+										<input id="f-asal" name="f-asal" class="form-control" type="text" placeholder="Kota atau Terminal" value="{{ inputAsal }}">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Tujuan</span>
+										<input id="f-tujuan" name="f-tujuan" class="form-control" type="text" placeholder="Kota atau Terminal" value="{{ inputTujuan }}">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Keberangkatan</span>
+										<input id="f-tanggal-berangkat" name="f-tanggal-berangkat" class="form-control" type="date"  required value="{{ inputTanggal }}">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Kelas</span>
+										<select id="f-kelas" name="f-kelas" class="form-control">
+											<option>Ekonomi</option>
+											<option>Eksekutif</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+							</div>
+							<div class="form-btn">
+								<button onclick="(poTersediaOrder())" class="submit-btn">Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="newSection" class="section d-flex justify-content-center align-items-center" style="display: none;">
+		<div id="newContent" class="booking-kursi">
+			<div id="tampilKursi"></div>
+			<div id="harga-konfirmasi"></div>
+            <div id="Konfirmasi Pesanan"></div>
+		</div>
+	</div>
+
+
+	<script src="../static/app.js"></script>
+	<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='lib/picker.js') }}"></script>
+	<script src="{{ url_for('static', filename='lib/picker.date.js') }}"></script>
+	<script src="{{ url_for('static', filename='lib/picker.time.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='app.js') }}"></script>
+</body>
+
+</html>

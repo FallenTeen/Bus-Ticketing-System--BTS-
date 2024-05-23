@@ -1,0 +1,28 @@
+
+<table>
+    <thead>
+      <tr>
+        <th>ID PO</th>
+        <th>Nama PO</th>
+        <th>Kelas</th>
+        <th>Tujuan</th>
+        <th>Jumlah Kursi</th>
+        <th>Harga</th>
+        <th>Berangkatkan?</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in listPo %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[5] }}</td>
+        <td><button onclick="berangkatkan('{{ row[0] }}')">Berangkatkan</button></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  

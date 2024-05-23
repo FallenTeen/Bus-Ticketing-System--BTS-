@@ -1,0 +1,13 @@
+<h4 id="infoPelanggan">Pelanggan: <span id="namaPelanggan">{{ namaPelanggan }}</span></h4>
+<div id="formTicketing">
+    <div>
+        <select class="form-control" id="pilihTujuan">
+            {% for item in listKeberangkatan %}
+            <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <label for="cekPoDenganTanggal">Tanggal Keberangkatan:</label>
+    <input type="date" id="cekPoDenganTanggal" class="datepicker-berangkatkan" placeholder="-Pilih Tanggal-">
+    <button onclick="getListPo()">Cek Po Tersedia</button>
+</div>

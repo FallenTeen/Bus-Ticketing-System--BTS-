@@ -1,0 +1,13 @@
+<h4>Buat Keberangkatan baru</h4>
+<div id="formKeberangkatan">
+    <div>
+        <select class="form-control" id="cekpotersedia">
+            {% for item in tujuan %}
+            <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <label for="tanggalKeberangkatan">Tanggal Keberangkatan:</label>
+    <input type="date" id="tanggalKeberangkatan" class="datepicker-berangkatkan" placeholder="-Pilih Tanggal-">
+    <button onclick="tampilPo()">Cek Po Tersedia</button>
+</div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Data Keberangkatan</title>
+</head>
+<body>
+    <h1>Data Keberangkatan</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Keberangkatan</th>
+                <th>ID PO</th>
+                <th>Nama PO</th>
+                <th>Kelas</th>
+                <th>Tujuan</th>
+                <th>Tanggal Keberangkatan</th>
+                <th>Total Tiket Terbeli</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td><button onclick="berangkatkanIdIni('{{ row[1] }}')">Berangkatkan Sekarang</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

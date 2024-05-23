@@ -1,0 +1,39 @@
+<h4>Tagihan Makanan</h4>
+<div id="Tagihan">
+    <h1>Data Tagihan</h1>
+    
+    <table border="1" id="tagihanTable">
+        <thead>
+            <tr>
+                <th>ID Pesanan</th>
+                <th>ID Tiket</th>
+                <th>Nama Pemesan</th>
+                <th>Makanan</th>
+                <th>Jumlah</th>
+                <th>Total Tagihan</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="tagihanBody">
+            {% for i in range(id_pesanan|length) %}
+            <tr>
+                <td>{{ id_pesanan[i] }}</td>
+                <td>{{ id_tiket[i] }}</td>
+                <td>{{ nama_pemesan[i] }}</td>
+                <td>{{ makanan[i] }}</td>
+                <td>{{ jumlah[i] }}</td>
+                <td>{{ tagihan[i] }}</td>
+                <td>{{ status[i] }}</td>
+                <td><button onclick="bayartagihan('{{ id_pesanan[i] }}')">Dibayar</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+    
+    </script>
+    
